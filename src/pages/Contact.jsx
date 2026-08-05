@@ -77,7 +77,7 @@ const Contact = () => {
       icon: MapPin,
       title: 'Location',
       detail: 'Thakur College of Engineering and Technology, Kandivali, Mumbai',
-      link: 'https://maps.google.com'
+      link: 'https://maps.app.goo.gl/vvR57yn2xwdWoQrL8'
     }
   ];
 
@@ -281,27 +281,50 @@ const Contact = () => {
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Come visit us at Thakur College of Engineering and Technology
             </p>
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center mb-4">
-                <MapPin className="w-8 h-8 text-white mr-3" />
-                <h3 className="text-2xl font-bold text-white">Our Location</h3>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-[1.05fr_1.35fr] gap-8"
+          >
+            <div className="bg-white/10 backdrop-blur-lg rounded-[32px] p-10 max-w-3xl mx-auto lg:mx-0 shadow-2xl shadow-black/10 border border-white/10">
+              <div className="flex flex-col items-center text-center">
+                <div className="flex items-center justify-center mb-4">
+                  <MapPin className="w-8 h-8 text-white mr-3" />
+                   <h3 className="text-2xl font-bold text-white">Our Location</h3>
+                </div>
+                <p className="text-white/90 leading-relaxed text-base sm:text-lg max-w-xl">
+                  Thakur College of Engineering and Technology<br />
+                  A-Block, Thakur Educational Campus,<br />
+                  Shyamnarayan Thakur Marg, Thakur Village,<br />
+                  Kandivali (East), Mumbai - 400101
+                </p>
+                <motion.a
+                  href="https://maps.google.com?q=Thakur+College+of+Engineering+and+Technology,+Kandivali,+Mumbai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex mt-8 items-center justify-center bg-white text-green-600 px-8 py-3 rounded-full font-semibold text-base hover:bg-gray-100 transition-colors"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  Get Directions
+                </motion.a>
               </div>
-              <p className="text-white/90 leading-relaxed">
-                Thakur College of Engineering and Technology<br />
-                A-Block, Thakur Educational Campus,<br />
-                Shyamnarayan Thakur Marg, Thakur Village,<br />
-                Kandivali (East), Mumbai - 400101
-              </p>
-              <motion.a
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-6 bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Directions
-              </motion.a>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[32px] shadow-2xl shadow-black/20 bg-slate-950/70">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-slate-950/20 to-slate-950/40 pointer-events-none" />
+              <iframe
+                title="Thakur College Campus Map"
+                src="https://www.google.com/maps?q=Thakur+College+of+Engineering+and+Technology,+Kandivali,+Mumbai&output=embed"
+                className="relative w-full h-full border-0"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </motion.div>
         </div>
