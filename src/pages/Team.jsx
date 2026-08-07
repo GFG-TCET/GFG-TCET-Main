@@ -83,7 +83,7 @@ const Team = () => {
     Swal.fire({
       icon: 'warning',
       title: 'Registration Closed',
-      text: 'Registrations are now closed for the academic year 2025–2026. See you next year!',
+      text: 'Registrations are now closed for the academic year 2026–2027. See you next year!',
       confirmButtonText: 'OK',
       confirmButtonColor: '#3085d6'
     });
