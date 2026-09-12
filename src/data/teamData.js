@@ -57,15 +57,31 @@ import ajitesh_jain from '../assets/Team-2025-2026/photo/ajitesh_jain.jpg';
 import tanishka_jaiswal from '../assets/Team-2025-2026/photo/tanishka_jaiswal.jpg';
 import tavleen_kaur from '../assets/Team-2025-2026/photo/tavleen_kaur.jpeg';
 
-// Team Members 2026-2027 (placeholders)
+// Team Members 2026-2027
+// Core team members
 import Aayush from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Aayush.jpg';
+import Himanshu from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Himanshu (Events).jpg';
+import Ravishankar from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Ravishankar Kanaki.png';
 import Ashutosh from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Ashutosh Kumar.png';
+import Sanju from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Marketing Head/Sanju Chauhan.jpg';
+import Riya from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Riya_kasat.jpeg';
+import Krishnam from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Krishnam Shukla.jpeg';
+import Nikita from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Nikita Mishra.png';
+
+// Working committee members
+import Sarthak from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/EVENTS/Sarthak_Katariya.png';
+import Ashish from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/EVENTS/ashish-singh-pfp.png';
+import Aryan from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/EVENTS/Aryan.jpg';
+import Amitosh from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/TECH/AMITOSH_20260909_124329.jpg';
+import Khushi from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/MARKETING/Khushi_Marketing.jpeg';
+import Adhithya from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/MARKETING/Adhithya Nair.jpg';
+import Aditya from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/GRAPHICS/Aditya Chaurasia.jpg';
 
 export const teamData = {
   '2026-2027': [
     {
       id: 1,
-      name: 'Aayush',
+      name: 'Aayush Gupta',
       role: 'Chairperson',
       image: Aayush,
       bio: 'Details to be added',
@@ -75,9 +91,9 @@ export const teamData = {
     },
     {
       id: 2,
-      name: 'TBA',
+      name: 'Nikita Mishra',
       role: 'Vice Chairperson',
-      // image: '/api/placeholder/150/150',
+      image: Nikita,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -85,17 +101,17 @@ export const teamData = {
     },
     {
       id: 3,
-      name: 'TBA',
+      name: 'Himanshu Gupta',
       role: 'Event Head',
-      // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
+      image: Himanshu,
+      bio: 'Java developer',
       github: '',
-      linkedin: '',
+      linkedin: 'https://www.linkedin.com/in/himanshugupta777',
       leetcode: '',
     },
     {
       id: 4,
-      name: 'TBA',
+      name: 'Gyaneshwar Jha',
       role: 'Technical Head',
       // image: '/api/placeholder/150/150',
       bio: 'Details to be added',
@@ -105,19 +121,19 @@ export const teamData = {
     },
     {
       id: 5,
-      name: 'TBA',
+      name: 'Sanju Chauhan',
       role: 'Marketing Head',
-      // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
+      image: Sanju,
+      bio: 'Leading marketing initiatives, promotions, collaborations, and community growth.',
       github: '',
-      linkedin: '',
-      leetcode: '',
+      linkedin: 'https://www.linkedin.com/in/sanju-chauhan-39b318379?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+      leetcode: 'https://leetcode.com/u/Sanju_Chauhan/',
     },
     {
       id: 6,
-      name: 'TBA',
+      name: 'Ravishankar Kanaki',
       role: 'Graphics Head',
-      // image: '/api/placeholder/150/150',
+      image: Ravishankar,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -125,17 +141,18 @@ export const teamData = {
     },
     {
       id: 7,
-      name: 'TBA',
+      name: 'Krishnam Shukla',
       role: 'Logistics Head',
-      // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
+      image: Krishnam,
+      bio: 'I am a Computer Engineering student with a strong interest in competitive programming, software development, and problem-solving. I enjoy learning by building projects and challenging myself with programming problems.',
+      github: 'https://github.com/krishnam1321',
+      linkedin: 'http://www.linkedin.com/in/krishnam-shukla-b1a91b315',
       leetcode: '',
+      codolio: 'https://codolio.com/profile/Krishnam_Shukla',
     },
     {
       id: 8,
-      name: 'TBA',
+      name: 'Ashutosh Kumar',
       role: 'Web Head',
       image: Ashutosh,
       bio: 'Details to be added',
@@ -145,7 +162,7 @@ export const teamData = {
     },
     {
       id: 9,
-      name: 'TBA',
+      name: 'Tanishka Dombe',
       role: 'PR Outreach Head',
       // image: '/api/placeholder/150/150',
       bio: 'Details to be added',
@@ -155,19 +172,19 @@ export const teamData = {
     },
     {
       id: 10,
-      name: 'TBA',
+      name: 'Riya Kasat',
       role: 'Social Media Head',
-      // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
+      image: Riya,
+      bio: 'Aspiring Full-Stack Developer skilled in web-dev and Java DSA, passionate about learning and building.',
+      github: 'https://github.com/Riyakk-11111',
+      linkedin: 'https://www.linkedin.com/in/riya-kasat-b85349370?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
       leetcode: '',
     },
     {
       id: 11,
-      name: 'TBA',
+      name: 'Sarthak Katariya',
       role: 'Event Coordinator',
-      // image: '/api/placeholder/150/150',
+      image: Sarthak,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -175,9 +192,9 @@ export const teamData = {
     },
     {
       id: 12,
-      name: 'TBA',
+      name: 'Ashish Singh',
       role: 'Event Coordinator',
-      // image: '/api/placeholder/150/150',
+      image: Ashish,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -185,19 +202,19 @@ export const teamData = {
     },
     {
       id: 13,
-      name: 'TBA',
+      name: 'Aryan Ram',
       role: 'Event Coordinator',
-      // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
-      leetcode: '',
+      image: Aryan,
+      bio: 'Motivated and responsible individual who enjoys working with people, taking initiative, solving problems, and creating meaningful results.',
+      github: 'https://github.com/arynram',
+      linkedin: 'https://www.linkedin.com/in/arynram/',
+      leetcode: 'https://leetcode.com/u/arynram/',
     },
     {
       id: 14,
-      name: 'TBA',
+      name: 'Amitosh',
       role: 'Technical Member',
-      // image: '/api/placeholder/150/150',
+      image: Amitosh,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -216,7 +233,7 @@ export const teamData = {
     {
       id: 16,
       name: 'TBA',
-      role: 'Marketing Member',
+      role: 'Technical Member',
       // image: '/api/placeholder/150/150',
       bio: 'Details to be added',
       github: '',
@@ -225,9 +242,9 @@ export const teamData = {
     },
     {
       id: 17,
-      name: 'TBA',
+      name: 'Khushi',
       role: 'Marketing Member',
-      // image: '/api/placeholder/150/150',
+      image: Khushi,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -235,6 +252,16 @@ export const teamData = {
     },
     {
       id: 18,
+      name: 'Adhithya Nair',
+      role: 'Marketing Member',
+      image: Adhithya,
+      bio: 'Details to be added',
+      github: '',
+      linkedin: '',
+      leetcode: '',
+    },
+    {
+      id: 19,
       name: 'TBA',
       role: 'Marketing Member',
       // image: '/api/placeholder/150/150',
@@ -244,7 +271,17 @@ export const teamData = {
       leetcode: '',
     },
     {
-      id: 19,
+      id: 20,
+      name: 'Aditya Chaurasia',
+      role: 'Graphics Member',
+      image: Aditya,
+      bio: 'Aspiring software developer skilled in programming, technology, problem-solving, and collaborative project development.',
+      github: 'https://github.com/adityamunnachaurasia-dot',
+      linkedin: 'https://www.linkedin.com/in/aditya-munna-chaurasia-726028284',
+      leetcode: 'https://leetcode.com/u/B9UXr8PIRL/',
+    },
+    {
+      id: 21,
       name: 'TBA',
       role: 'Graphics Member',
       // image: '/api/placeholder/150/150',
@@ -254,7 +291,7 @@ export const teamData = {
       leetcode: '',
     },
     {
-      id: 20,
+      id: 22,
       name: 'TBA',
       role: 'Graphics Member',
       // image: '/api/placeholder/150/150',
