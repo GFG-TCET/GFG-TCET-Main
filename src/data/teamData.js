@@ -58,15 +58,16 @@ import tanishka_jaiswal from '../assets/Team-2025-2026/photo/tanishka_jaiswal.jp
 import tavleen_kaur from '../assets/Team-2025-2026/photo/tavleen_kaur.jpeg';
 
 // Team Members 2026-2027 (placeholders)
-import hella from '../assets/Team-2026-2027/hella.png';
+import Aayush from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Aayush.jpg';
+import Ashutosh from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Ashutosh Kumar.png';
 
 export const teamData = {
   '2026-2027': [
     {
       id: 1,
-      name: 'TBA',
+      name: 'Aayush',
       role: 'Chairperson',
-      // image: '/api/placeholder/150/150',
+      image: Aayush,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -136,7 +137,7 @@ export const teamData = {
       id: 8,
       name: 'TBA',
       role: 'Web Head',
-      image: hella,
+      image: Ashutosh,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
