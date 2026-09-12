@@ -67,6 +67,7 @@ import Sanju from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Marketing He
 import Riya from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Riya_kasat.jpeg';
 import Krishnam from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Krishnam Shukla.jpeg';
 import Nikita from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Nikita Mishra.png';
+import Tanishka from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Tanishka.jpg';
 
 // Working committee members
 import Sarthak from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/EVENTS/Sarthak_Katariya.png';
@@ -164,7 +165,7 @@ export const teamData = {
       id: 9,
       name: 'Tanishka Dombe',
       role: 'PR Outreach Head',
-      // image: '/api/placeholder/150/150',
+      image: Tanishka,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
