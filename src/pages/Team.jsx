@@ -146,9 +146,9 @@ const Team = () => {
           openLightbox(member);
         }
       }}
-      className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 h-[250px] flex flex-col w-[220px] flex-shrink-0 cursor-pointer"
+      className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 h-[270px] flex flex-col w-[220px] flex-shrink-0 cursor-pointer"
     >
-      <div className="relative mb-4 flex-shrink-0">        
+      <div className="relative mb-3 flex-shrink-0">        
         <div className="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto flex items-center justify-center overflow-hidden">          
           {!hasImageError && isValidImageSrc ? (
             <img
@@ -176,35 +176,27 @@ const Team = () => {
         </div>
       </div>
 
-      <div className="text-center mb-4 flex-grow">
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+      <div className="text-center mb-2 flex-grow flex flex-col justify-center">
+        <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-1 leading-snug line-clamp-2" title={member.name}>
           {member.name}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed line-clamp-2">
+        <p className="text-gray-600 dark:text-gray-400 text-xs leading-normal line-clamp-2">
           {member.bio}
         </p>
       </div>
 
-      <div className="flex justify-center space-x-3 flex-shrink-0">        {member.github && (
+      <div className="flex justify-center space-x-3 flex-shrink-0 mt-auto">
+        {member.github && (
           <motion.a
             href={member.github}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="p-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-500 rounded-full transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             <Github className="w-4 h-4 text-gray-600 dark:text-gray-300" />
-            {/* <svg className="w-4 h-4 fill-current text-gray-600 dark:text-gray-300" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.0.069-.608 0 1.003.746 2.07 1.462 2.07.907 0 1.496-.56 1.767-1.306.755-1.28 2.008-.91 2.496-.696.077-.548.297-.91.54-1.12-2.221-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z" clipRule="evenodd" /></svg> */}
-              {/* <svg 
-                className="w-4 h-4 text-gray-600 dark:text-gray-300 transition-colors" 
-                viewBox="0 0 24 24" 
-                fill="currentColor" 
-                aria-hidden="true"
-              >
-                <title>GitHub</title>
-                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-              </svg> */}
           </motion.a>
         )}
         
@@ -213,6 +205,7 @@ const Team = () => {
             href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="p-1.5 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 rounded-full transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -226,6 +219,7 @@ const Team = () => {
             href={member.twitter}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="p-1.5 bg-sky-100 hover:bg-sky-200 dark:bg-sky-900 dark:hover:bg-sky-800 rounded-full transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -239,6 +233,7 @@ const Team = () => {
             href={member.leetcode}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="p-1.5 bg-orange-100 hover:bg-orange-200 dark:bg-orange-900 dark:hover:bg-orange-800 rounded-full transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
