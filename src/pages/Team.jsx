@@ -14,7 +14,7 @@ const Team = () => {
   const getYearFromUrl = () => {
     const searchParams = new URLSearchParams(location.search);
     const yearParam = searchParams.get('year');
-    return yearParam && years.includes(yearParam) ? yearParam : (years[0] || '2025-2026');
+    return yearParam && years.includes(yearParam) ? yearParam : (years[0] || '2026-2027');
   };
   
   const [selectedYear, setSelectedYear] = useState(getYearFromUrl());
@@ -29,7 +29,7 @@ const Team = () => {
     const yearParam = searchParams.get('year');
   
     if (!yearParam || !years.includes(yearParam)) {
-      const currentYear = years[0] || '2025-2026';
+      const currentYear = years[0] || '2026-2027';
       navigate(`/team?year=${currentYear}`, { replace: true });
       setSelectedYear(currentYear);
     } else if (selectedYear !== urlYear) {
@@ -141,17 +141,22 @@ const Team = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: delay + index * 0.1 }}
       whileHover={{ y: -10 }}
-      className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 h-[250px] flex flex-col w-[220px] flex-shrink-0"
+      onClick={(event) => {
+        if (!event.target.closest('a')) {
+          openLightbox(member);
+        }
+      }}
+      className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 h-[250px] flex flex-col w-[220px] flex-shrink-0 cursor-pointer"
     >
       <div className="relative mb-4 flex-shrink-0">        
         <div className="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto flex items-center justify-center overflow-hidden">          
           {!hasImageError && isValidImageSrc ? (
             <img
-              className="w-full h-full object-cover rounded-full cursor-pointer transition-transform duration-300 hover:scale-110"
+              className="team-member-img w-full h-full object-cover object-[center_15%] rounded-full cursor-pointer transition-transform duration-300 hover:scale-110"
+              style={{ objectFit: 'cover', objectPosition: 'center 15%' }}
               src={member.image}
               alt={member.name}
               title="Click for seeing more"
-              onClick={() => openLightbox(member)}
               onError={(e) => {
                 e.target.style.display = 'none';
                 handleImageError(member.id);
@@ -175,7 +180,7 @@ const Team = () => {
         <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
           {member.name}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed line-clamp-2">
           {member.bio}
         </p>
       </div>
@@ -459,7 +464,8 @@ const Team = () => {
             {/* Image */}
             <div className="aspect-square overflow-hidden">
               <img
-                className="w-full h-full object-cover"
+                className="team-member-img w-full h-full object-cover object-[center_15%]"
+                style={{ objectFit: 'cover', objectPosition: 'center 15%' }}
                 src={lightboxImage.image}
                 alt={lightboxImage.name}
               />
