@@ -1,14 +1,21 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Users, ExternalLink, Clock, Tag, X, Send, Eye } from 'lucide-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Calendar, MapPin, Users, ExternalLink, Clock, X, Send, Eye } from 'lucide-react';
 import { upcomingEvents, pastEvents, getCategoryColor } from '../data/eventsData';
 import { getEventResults, hasResults } from '../data/resultsData';
 import Swal from 'sweetalert2';
+import { EventCard, EventBanner } from '../components/EventCard';
+import { learningSeriesData } from '../data/learningSeriesData';
+import { LearningSeriesCard, LearningSeriesSection } from '../components/LearningSeries';
 
 const Events = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('upcoming');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedTab = searchParams.get('tab');
+  const activeTab = ['upcoming', 'learning', 'past'].includes(requestedTab) ? requestedTab : 'upcoming';
+  const selectedSeries = searchParams.get('series');
+  const setActiveTab = (tab) => setSearchParams(tab === 'upcoming' ? {} : { tab });
   const [showEventModal, setShowEventModal] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -66,7 +73,7 @@ const Events = () => {
       })
     });
 
-    const result = await response.text();
+    await response.text();
 
     Swal.fire({
       icon: 'success',
@@ -119,14 +126,16 @@ const Events = () => {
 
       <section className="py-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center space-x-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4" aria-label="Events sections">
             {[
               { id: 'upcoming', label: 'Upcoming Events' },
+              { id: 'learning', label: 'Learning Series' },
               { id: 'past', label: 'Past Events' }
             ].map((tab) => (
               <motion.button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
+                aria-pressed={activeTab === tab.id}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeTab === tab.id
                     ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg'
@@ -151,28 +160,9 @@ const Events = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {upcomingEvents.map((event, index) => (
-                  <motion.div
-                    key={event.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full"
-                  >
-                    <div className="h-48 flex items-center justify-center overflow-hidden">
-                      {event.image ? (
-                        <img 
-                          src={event.image} 
-                          alt={event.title}
-                          className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-                          onClick={() => handleImageClick(event.image, event.title)}
-                        />
-                      ) : (
-                        <div className="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
-                          <Calendar className="w-16 h-16 text-white" />
-                        </div>
-                      )}
-                    </div>
+                {upcomingEvents.map(event => (
+                  <EventCard key={event.id}>
+                    {event.image ? <EventBanner src={event.image} title={event.title} onClick={handleImageClick} /> : <div className="h-48 shrink-0 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center"><Calendar className="w-16 h-16 text-white" /></div>}
 
                     <div className="p-6 flex flex-col flex-grow">
                       <div className="flex items-center justify-between mb-4">
@@ -216,19 +206,7 @@ const Events = () => {
                           <span className="text-sm">{event.spots}</span>
                         </div>
                       </div>
-                      {/* <motion.a
-                        href={event.registrationLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 hover:from-green-600 hover:to-blue-600 transition-all duration-300 mt-auto"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <span>Register Now</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </motion.a> */}
-
-                       {event.status === 'closed' && hasResults(event.id) ? (
+                      {event.status === 'closed' && hasResults(event.id) ? (
                         <motion.button
                           onClick={() => handleResultsClick(event.id)}
                           className="w-full py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 transition-all duration-300 mt-auto bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600"
@@ -269,10 +247,15 @@ const Events = () => {
                         </motion.a>
                       )}
                     </div>
-                  </motion.div>
+                  </EventCard>
+                ))}
+                {learningSeriesData.filter(series => series.featured).map(series => (
+                  <LearningSeriesCard key={series.id} series={series} onImageClick={handleImageClick} />
                 ))}
               </div>
             </motion.div>
+          ) : activeTab === 'learning' ? (
+            <LearningSeriesSection selectedSeries={selectedSeries} onImageClick={handleImageClick} />
           ) : (
             <motion.div
               key="past"
@@ -491,8 +474,8 @@ const Events = () => {
             >
               <X className="w-6 h-6" />
             </button>
-            <img 
-              src={selectedImage.src} 
+            <img
+              src={selectedImage.src}
               alt={selectedImage.title}
               className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
             />
