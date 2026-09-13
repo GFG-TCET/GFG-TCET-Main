@@ -86,3 +86,9 @@ body {
   background-color: #10b981;
   color: white;
 }
+
+/* Team member profile image styling */
+.team-member-img {
+  object-fit: cover;
+  object-position: center 15%;
+}

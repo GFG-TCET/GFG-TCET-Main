@@ -58,25 +58,28 @@ import tanishka_jaiswal from '../assets/Team-2025-2026/photo/tanishka_jaiswal.jp
 import tavleen_kaur from '../assets/Team-2025-2026/photo/tavleen_kaur.jpeg';
 
 // Team Members 2026-2027
-// Core team members
-import Aayush from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Aayush.jpg';
-import Himanshu from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Himanshu (Events).jpg';
-import Ravishankar from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Ravishankar Kanaki.png';
-import Ashutosh from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Ashutosh Kumar.png';
-import Sanju from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Marketing Head/Sanju Chauhan.jpg';
-import Riya from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Riya_kasat.jpeg';
-import Krishnam from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Krishnam Shukla.jpeg';
-import Nikita from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Nikita Mishra.png';
-import Tanishka from '../assets/Team-2026-2027/Id_Card_Photos_GFG/Core/Tanishka.jpg';
+// Core & Extended Core
+import Aayush from '../assets/Team-2026-2027/Aayush.jpg';
+import Nikita from '../assets/Team-2026-2027/Nikita Mishra.png';
+import Himanshu from '../assets/Team-2026-2027/Himanshu (Events).jpg';
+import Sanju from '../assets/Team-2026-2027/Sanju Chauhan.jpg';
+import Ravishankar from '../assets/Team-2026-2027/Ravishankar Kanaki.png';
+import Krishnam from '../assets/Team-2026-2027/Krishnam Shukla.jpeg';
+import Ashutosh from '../assets/Team-2026-2027/Ashutosh Kumar.png';
+import Tanishka from '../assets/Team-2026-2027/Tanishka.jpg';
+import Riya from '../assets/Team-2026-2027/Riya_kasat.jpeg';
 
-// Working committee members
-import Sarthak from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/EVENTS/Sarthak_Katariya.png';
-import Ashish from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/EVENTS/ashish-singh-pfp.png';
-import Aryan from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/EVENTS/Aryan.jpg';
-import Amitosh from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/TECH/AMITOSH_20260909_124329.jpg';
-import Khushi from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/MARKETING/Khushi_Marketing.jpeg';
-import Adhithya from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/MARKETING/Adhithya Nair.jpg';
-import Aditya from '../assets/Team-2026-2027/Id_Card_Photos_GFG/WC/GRAPHICS/Aditya Chaurasia.jpg';
+// Working Committee
+import Sarthak from '../assets/Team-2026-2027/Sarthak_Katariya.png';
+import Ashish from '../assets/Team-2026-2027/ashish-singh-pfp.png';
+import Aryan from '../assets/Team-2026-2027/Aryan.jpg';
+import Amitosh from '../assets/Team-2026-2027/AMITOSH_20260909_124329.jpg';
+import techMember2 from '../assets/Team-2026-2027/1789234376616.png';
+import Khushi from '../assets/Team-2026-2027/Khushi_Marketing.jpeg';
+import Adhithya from '../assets/Team-2026-2027/Adhithya Nair.jpg';
+import Mitansh from '../assets/Team-2026-2027/mitansh.png';
+import Aditya from '../assets/Team-2026-2027/Aditya Chaurasia.jpg';
+import Kaivalya from '../assets/Team-2026-2027/Kaivalya.jpg';
 
 export const teamData = {
   '2026-2027': [
@@ -95,10 +98,10 @@ export const teamData = {
       name: 'Nikita Mishra',
       role: 'Vice Chairperson',
       image: Nikita,
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
-      leetcode: '',
+      bio: 'Motivated and detail-oriented developer',
+      github: 'https://github.com/Nikita13106',
+      linkedin: 'https://www.linkedin.com/in/nikita1310',
+      leetcode: 'https://leetcode.com/u/nikita1310/',
     },
     {
       id: 3,
@@ -135,10 +138,10 @@ export const teamData = {
       name: 'Ravishankar Kanaki',
       role: 'Graphics Head',
       image: Ravishankar,
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
-      leetcode: '',
+      bio: 'A learner on a creative journey.',
+      github: 'https://github.com/kanaki1127',
+      linkedin: 'https://www.linkedin.com/in/ravishankar-kanaki-355661269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+      leetcode: 'https://leetcode.com/u/kanakir2171/',
     },
     {
       id: 7,
@@ -157,7 +160,7 @@ export const teamData = {
       role: 'Web Head',
       image: Ashutosh,
       bio: 'Details to be added',
-      github: '',
+      github: 'https://github.com/tricky2-code',
       linkedin: '',
       leetcode: '',
     },
@@ -223,9 +226,9 @@ export const teamData = {
     },
     {
       id: 15,
-      name: 'TBA',
+      name: 'Technical Member',
       role: 'Technical Member',
-      // image: '/api/placeholder/150/150',
+      image: techMember2,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -236,13 +239,6 @@ export const teamData = {
       name: 'TBA',
       role: 'Technical Member',
       // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
-      leetcode: '',
-    },
-    {
-      id: 17,
       name: 'Khushi',
       role: 'Marketing Member',
       image: Khushi,
@@ -252,10 +248,26 @@ export const teamData = {
       leetcode: '',
     },
     {
-      id: 18,
+      id: 17,
+      name: 'Khushi',
       name: 'Adhithya Nair',
       role: 'Marketing Member',
+      image: Khushi,
+      bio: 'Details to be added',
+      github: '',
+      linkedin: '',
+      leetcode: '',
       image: Adhithya,
+      bio: 'Passionate in Growing Skills in Technology and Data field.',
+      github: 'https://github.com/Adhithya756',
+      linkedin: 'http://www.linkedin.com/in/adhithya-nair',
+      leetcode: 'https://leetcode.com/u/Adhithya04',
+    },
+    {
+      id: 18,
+      name: 'Mitansh',
+      role: 'Marketing Member',
+      image: Mitansh,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -263,16 +275,6 @@ export const teamData = {
     },
     {
       id: 19,
-      name: 'TBA',
-      role: 'Marketing Member',
-      // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
-      leetcode: '',
-    },
-    {
-      id: 20,
       name: 'Aditya Chaurasia',
       role: 'Graphics Member',
       image: Aditya,
@@ -282,20 +284,10 @@ export const teamData = {
       leetcode: 'https://leetcode.com/u/B9UXr8PIRL/',
     },
     {
-      id: 21,
-      name: 'TBA',
+      id: 20,
+      name: 'Kaivalya',
       role: 'Graphics Member',
-      // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
-      leetcode: '',
-    },
-    {
-      id: 22,
-      name: 'TBA',
-      role: 'Graphics Member',
-      // image: '/api/placeholder/150/150',
+      image: Kaivalya,
       bio: 'Details to be added',
       github: '',
       linkedin: '',
@@ -835,4 +827,4 @@ export const coreTeamMembers = [
 ];
 
 // Helper function to get available years
-export const getAvailableYears = () => Object.keys(teamData).sort((a, b) => b - a); // Sort years in descending order
+export const getAvailableYears = () => Object.keys(teamData).sort((a, b) => b.localeCompare(a)); // Sort years in descending order

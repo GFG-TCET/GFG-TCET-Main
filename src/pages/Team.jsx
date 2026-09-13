@@ -14,7 +14,7 @@ const Team = () => {
   const getYearFromUrl = () => {
     const searchParams = new URLSearchParams(location.search);
     const yearParam = searchParams.get('year');
-    return yearParam && years.includes(yearParam) ? yearParam : (years[0] || '2025-2026');
+    return yearParam && years.includes(yearParam) ? yearParam : (years[0] || '2026-2027');
   };
   
   const [selectedYear, setSelectedYear] = useState(getYearFromUrl());
@@ -29,7 +29,7 @@ const Team = () => {
     const yearParam = searchParams.get('year');
   
     if (!yearParam || !years.includes(yearParam)) {
-      const currentYear = years[0] || '2025-2026';
+      const currentYear = years[0] || '2026-2027';
       navigate(`/team?year=${currentYear}`, { replace: true });
       setSelectedYear(currentYear);
     } else if (selectedYear !== urlYear) {
@@ -152,7 +152,8 @@ const Team = () => {
         <div className="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto flex items-center justify-center overflow-hidden">          
           {!hasImageError && isValidImageSrc ? (
             <img
-              className="w-full h-full object-cover rounded-full cursor-pointer transition-transform duration-300 hover:scale-110"
+              className="team-member-img w-full h-full object-cover object-[center_15%] rounded-full cursor-pointer transition-transform duration-300 hover:scale-110"
+              style={{ objectFit: 'cover', objectPosition: 'center 15%' }}
               src={member.image}
               alt={member.name}
               title="Click for seeing more"
@@ -463,7 +464,8 @@ const Team = () => {
             {/* Image */}
             <div className="aspect-square overflow-hidden">
               <img
-                className="w-full h-full object-cover"
+                className="team-member-img w-full h-full object-cover object-[center_15%]"
+                style={{ objectFit: 'cover', objectPosition: 'center 15%' }}
                 src={lightboxImage.image}
                 alt={lightboxImage.name}
               />
