@@ -74,12 +74,14 @@ import Sarthak from '../assets/Team-2026-2027/Sarthak_Katariya.png';
 import Ashish from '../assets/Team-2026-2027/ashish-singh-pfp.png';
 import Aryan from '../assets/Team-2026-2027/Aryan.jpg';
 import Amitosh from '../assets/Team-2026-2027/AMITOSH_20260909_124329.jpg';
-import techMember2 from '../assets/Team-2026-2027/1789234376616.png';
+import Harshit from '../assets/Team-2026-2027/1789234376616.png';
+import Himanshu_Naik from '../assets/Team-2026-2027/Himanshu_Naik.png';
 import Khushi from '../assets/Team-2026-2027/Khushi_Marketing.jpeg';
 import Adhithya from '../assets/Team-2026-2027/Adhithya Nair.jpg';
 import Mitansh from '../assets/Team-2026-2027/mitansh.png';
 import Aditya from '../assets/Team-2026-2027/Aditya Chaurasia.jpg';
 import Kaivalya from '../assets/Team-2026-2027/Kaivalya.jpg';
+import Rupam from '../assets/Team-2026-2027/Rupam.jpg';
 
 export const teamData = {
   '2026-2027': [
@@ -159,7 +161,7 @@ export const teamData = {
       role: 'Web Head',
       image: Ashutosh,
       bio: 'Details to be added',
-      github: 'https://github.com/tricky2-code',
+      github: 'https://github.com/tricky2-coder',
       linkedin: '',
       leetcode: '',
     },
@@ -225,9 +227,9 @@ export const teamData = {
     },
     {
       id: 15,
-      name: 'Harshit Shailendra Tiwari',
+      name: 'Harshit Tiwari',
       role: 'Technical Member',
-      image: techMember2,
+      image: Harshit,
       bio: 'BE Information Technology student at Thakur College, skilled in programming, web development, and problem-solving.',
       github: 'https://github.com/Harshitszn',
       linkedin: 'https://www.linkedin.com/in/harshit-tiwari-505468397?utm_source=share_via&utm_content=profile&utm_medium=member_android',
@@ -235,6 +237,16 @@ export const teamData = {
     },
     {
       id: 16,
+      name: 'Himanshu Naik',
+      role: 'Technical Member',
+      image: Himanshu_Naik,
+      bio: 'Enthusiastic technical team member passionate about software development, problem-solving, and building impactful web solutions.',
+      github: 'https://github.com/himanshunaik7715-dev',
+      linkedin: 'https://www.linkedin.com/in/himanshu-naik-8aa203404/',
+      leetcode: 'https://leetcode.com/u/dJHXxDlApC/',
+    },
+    {
+      id: 17,
       name: 'Khushi Tyagi',
       role: 'Marketing Member',
       image: Khushi,
@@ -244,7 +256,7 @@ export const teamData = {
       leetcode: 'https://leetcode.com/u/khushityagi21',
     },
     {
-      id: 17,
+      id: 18,
       name: 'Adhithya Nair',
       role: 'Marketing Member',
       image: Adhithya,
@@ -254,7 +266,7 @@ export const teamData = {
       leetcode: '',
     },
     {
-      id: 18,
+      id: 19,
       name: 'Mitansh',
       role: 'Marketing Member',
       image: Mitansh,
@@ -265,7 +277,7 @@ export const teamData = {
       twitter: 'https://x.com/mitansh_j07',
     },
     {
-      id: 19,
+      id: 20,
       name: 'Aditya Chaurasia',
       role: 'Graphics Member',
       image: Aditya,
@@ -275,7 +287,17 @@ export const teamData = {
       leetcode: 'https://leetcode.com/u/B9UXr8PIRL/',
     },
     {
-      id: 20,
+      id: 21,
+      name: 'Rupam Ghosh',
+      role: 'Graphics Member',
+      image: Rupam,
+      bio: 'Innovative B.E. IT student transforming bold ideas into intelligent solutions that make a meaningful impact.',
+      github: 'https://github.com/rupamghosh3000',
+      linkedin: 'https://www.linkedin.com/in/rupam-ghosh-262b4434b?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+      leetcode: 'https://leetcode.com/u/rupam1011/',
+    },
+    {
+      id: 22,
       name: 'Kaivalya',
       role: 'Graphics Member',
       image: Kaivalya,
