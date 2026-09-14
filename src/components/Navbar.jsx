@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
-import { getAvailableYears } from '../data/teamData';
 import gfg_tcet_logo from '../assets/gfg_tcet_logo.jpg';
 
 const Navbar = () => {
@@ -10,8 +9,6 @@ const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  const availableYears = getAvailableYears();
 
   const handleNavigation = () => {
     sessionStorage.setItem('react-router-navigation', 'true');

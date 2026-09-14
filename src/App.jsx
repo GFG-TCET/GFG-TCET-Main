@@ -1,13 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Team from './pages/Team';
-import Events from './pages/Events';
-import Results from './pages/Results';
-import Contact from './pages/Contact';
 import useSecurity from './hooks/useSecurity';
 import './App.css';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Team = lazy(() => import('./pages/Team'));
+const Events = lazy(() => import('./pages/Events'));
+const Results = lazy(() => import('./pages/Results'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 function App() {
   const { showWarning, closeWarning } = useSecurity();
@@ -16,15 +18,17 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/results/:eventId" element={<Results />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen bg-gray-50 dark:bg-gray-900" />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/results/:eventId" element={<Results />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
         
         {showWarning && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
