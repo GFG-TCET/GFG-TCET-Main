@@ -68,6 +68,7 @@ import Krishnam from '../assets/Team-2026-2027/Krishnam Shukla.jpeg';
 import Ashutosh from '../assets/Team-2026-2027/Ashutosh Kumar.png';
 import Tanishka from '../assets/Team-2026-2027/Tanishka.jpg';
 import Riya from '../assets/Team-2026-2027/Riya_kasat.jpeg';
+import gyan from '../assets/Team-2026-2027/gyan.jpg';
 
 // Working Committee
 import Sarthak from '../assets/Team-2026-2027/Sarthak_Katariya.png';
@@ -119,10 +120,10 @@ export const teamData = {
       id: 4,
       name: 'Gyaneshwar Jha',
       role: 'Technical Head',
-      // image: '/api/placeholder/150/150',
-      bio: 'Details to be added',
-      github: '',
-      linkedin: '',
+      image: gyan,
+      bio: 'Leading the code, compiling the future, and debugging the path to innovation.',
+      github: 'https://github.com/gyaneshwarjha',
+      linkedin: 'https://www.linkedin.com/in/gyaneshwarjha',
       leetcode: '',
     },
     {
@@ -153,16 +154,16 @@ export const teamData = {
       bio: 'I am a Computer Engineering student with a strong interest in competitive programming , software development and problem-solving . I enjoy learning by building projects and challenging myself with programming problems .',
       github: 'https://github.com/krishnam1321',
       linkedin: 'https://www.linkedin.com/in/krishnam-shukla-b1a91b315',
-      leetcode: 'https://codolio.com/profile/Krishnam_Shukla',
+      codolio: 'https://codolio.com/profile/Krishnam_Shukla',
     },
     {
       id: 8,
       name: 'Ashutosh Kumar',
       role: 'Web Head',
       image: Ashutosh,
-      bio: 'Details to be added',
+      bio: 'Architecting the vision, deploying the code, and elevating the geek community.',
       github: 'https://github.com/tricky2-coder',
-      linkedin: '',
+      linkedin: 'https://www.linkedin.com/in/ashutosh-kumar-b69475199/',
       leetcode: '',
     },
     {
@@ -190,9 +191,9 @@ export const teamData = {
       name: 'Sarthak Katariya',
       role: 'Event Coordinator',
       image: Sarthak,
-      bio: 'Details to be added',
+      bio: 'Structuring the logistics so the community can focus on innovating.',
       github: '',
-      linkedin: '',
+      linkedin: 'https://www.linkedin.com/in/sarthak-katariya-0a8910363/',
       leetcode: '',
     },
     {
@@ -274,7 +275,7 @@ export const teamData = {
       github: 'https://github.com/mitanshj07',
       linkedin: 'https://www.linkedin.com/in/mitanshjain07?utm_source=share_via&utm_content=profile&utm_medium=member_android',
       leetcode: '',
-      twitter: 'https://x.com/mitansh_j07',
+      x: 'https://x.com/mitansh_j07',
     },
     {
       id: 20,

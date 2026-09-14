@@ -1,10 +1,33 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Users, ChevronDown, X } from 'lucide-react';
-import { SiLeetcode } from 'react-icons/si';
+import { Github, Linkedin, Users, ChevronDown, X as CloseIcon } from 'lucide-react';
+import { SiLeetcode, SiX } from 'react-icons/si';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { teamData, getAvailableYears } from '../data/teamData';
 import Swal from 'sweetalert2';
+
+const CodolioIcon = ({ className = '' }) => (
+  <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
+    <defs>
+      <linearGradient id="codolioGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+        <stop offset="0%" stopColor="#ff8a3d" />
+        <stop offset="50%" stopColor="#ff6b2c" />
+        <stop offset="100%" stopColor="#ef4b2d" />
+      </linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="28" fill="url(#codolioGradient)" />
+    <path
+      d="M22.5 18.5c-7.4 2.8-12.4 10.1-11.8 18.1.7 8.1 6.8 14.9 15 17.2 8 2.1 16.4-.3 21.9-6.5l-7.1-6.1c-3.2 3.2-8.1 4.3-12.3 2.8-4.3-1.5-7.4-5.5-7.6-10.1-.2-4.6 2.4-8.8 6.6-10.6 3.1-1.3 6.8-1.2 9.9.5l4.9-7.2c-4.2-3.2-9.4-4.6-14.5-3.9Z"
+      fill="white"
+      opacity="0.95"
+    />
+    <path
+      d="M39.6 18.5c-5.8 0-10.6 4.7-10.6 10.6v.5h8.2v-.3c0-1.8 1.5-3.3 3.3-3.3 1.7 0 3.1 1.3 3.1 3.1 0 1.3-.8 2.5-2.1 3l-4.7 1.8c-4.1 1.6-6.9 5.7-6.9 10.2 0 6.1 5 11.1 11.1 11.1 2.9 0 5.6-1.1 7.5-3.1l-5.7-5.5c-1.1 1.1-2.6 1.7-4.2 1.7-2.8 0-5-2.1-5-4.8 0-2.5 1.9-4.6 4.5-4.8l7.7-1.5c4.4-.8 7.5-4.7 7.5-9.1 0-5.6-4.6-10.2-10.3-10.2Z"
+      fill="white"
+      opacity="0.95"
+    />
+  </svg>
+);
 
 const Team = () => {
   const years = getAvailableYears();
@@ -192,7 +215,7 @@ const Team = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="p-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-500 rounded-full transition-colors"
+            className="w-7 h-7 p-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-500 rounded-full transition-colors flex items-center justify-center"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -206,7 +229,7 @@ const Team = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="p-1.5 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 rounded-full transition-colors"
+            className="w-7 h-7 p-1.5 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 rounded-full transition-colors flex items-center justify-center"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -214,17 +237,19 @@ const Team = () => {
           </motion.a>
         )}
         
-        {member.twitter && (
+        {(member.twitter || member.x) && (
           <motion.a
-            href={member.twitter}
+            href={member.twitter || member.x}
             target="_blank"
             rel="noopener noreferrer"
+            title="X"
             onClick={(e) => e.stopPropagation()}
-            className="p-1.5 bg-sky-100 hover:bg-sky-200 dark:bg-sky-900 dark:hover:bg-sky-800 rounded-full transition-colors"
-            whileHover={{ scale: 1.1 }}
+            aria-label="X profile"
+            className="group w-7 h-7 p-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-500 rounded-full transition-colors duration-200 flex items-center justify-center"
+            whileHover={{ scale: 1.12 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Twitter className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+            <SiX className="w-4 h-4 text-gray-700 group-hover:text-gray-950 dark:text-gray-200 dark:group-hover:text-white transition-colors" />
           </motion.a>
         )}
         
@@ -234,11 +259,27 @@ const Team = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="p-1.5 bg-orange-100 hover:bg-orange-200 dark:bg-orange-900 dark:hover:bg-orange-800 rounded-full transition-colors"
+            className="w-7 h-7 p-1.5 bg-orange-100 hover:bg-orange-200 dark:bg-orange-900 dark:hover:bg-orange-800 rounded-full transition-colors flex items-center justify-center"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             <SiLeetcode className="w-4 h-4 text-yellow-500 dark:text-yellow-400" />
+          </motion.a>
+        )}
+
+        {member.codolio && (
+          <motion.a
+            href={member.codolio}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Codolio"
+            onClick={(e) => e.stopPropagation()}
+            aria-label="Codolio profile"
+            className="group w-7 h-7 bg-gradient-to-br from-[#fff4eb] to-[#fbe7d8] hover:from-orange-100 hover:to-orange-200 dark:from-gray-600 dark:to-gray-700 dark:hover:from-orange-900 dark:hover:to-orange-800 rounded-full transition-all duration-200 flex items-center justify-center shadow-sm ring-1 ring-orange-100/70 dark:ring-orange-800/40"
+            whileHover={{ scale: 1.12 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <CodolioIcon className="w-4 h-4 drop-shadow-sm transition-transform duration-200 group-hover:scale-110" />
           </motion.a>
         )}
       </div>
@@ -453,7 +494,7 @@ const Team = () => {
               onClick={closeLightbox}
               className="absolute top-4 right-4 z-10 p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors"
             >
-              <X className="w-5 h-5 text-white" />
+              <CloseIcon className="w-5 h-5 text-white" />
             </button>
 
             {/* Image */}
@@ -487,7 +528,7 @@ const Team = () => {
                     href={lightboxImage.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-500 rounded-full transition-colors"
+                    className="w-9 h-9 p-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-500 rounded-full transition-colors flex items-center justify-center"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -500,7 +541,7 @@ const Team = () => {
                     href={lightboxImage.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 rounded-full transition-colors"
+                    className="w-9 h-9 p-2 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 rounded-full transition-colors flex items-center justify-center"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -508,16 +549,18 @@ const Team = () => {
                   </motion.a>
                 )}
                 
-                {lightboxImage.twitter && (
+                {(lightboxImage.twitter || lightboxImage.x) && (
                   <motion.a
-                    href={lightboxImage.twitter}
+                    href={lightboxImage.twitter || lightboxImage.x}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-sky-100 hover:bg-sky-200 dark:bg-sky-900 dark:hover:bg-sky-800 rounded-full transition-colors"
-                    whileHover={{ scale: 1.1 }}
+                    title="X"
+                    aria-label="X profile"
+                    className="group w-9 h-9 p-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-500 rounded-full transition-colors duration-200 flex items-center justify-center"
+                    whileHover={{ scale: 1.12 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <Twitter className="w-5 h-5 text-sky-600 dark:text-sky-400" />
+                    <SiX className="w-5 h-5 text-gray-700 group-hover:text-gray-950 dark:text-gray-200 dark:group-hover:text-white transition-colors" />
                   </motion.a>
                 )}
                 
@@ -526,11 +569,26 @@ const Team = () => {
                     href={lightboxImage.leetcode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-orange-100 hover:bg-orange-200 dark:bg-orange-900 dark:hover:bg-orange-800 rounded-full transition-colors"
+                    className="w-9 h-9 p-2 bg-orange-100 hover:bg-orange-200 dark:bg-orange-900 dark:hover:bg-orange-800 rounded-full transition-colors flex items-center justify-center"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <SiLeetcode className="w-5 h-5 text-yellow-500 dark:text-yellow-400" />
+                  </motion.a>
+                )}
+
+                {lightboxImage.codolio && (
+                  <motion.a
+                    href={lightboxImage.codolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Codolio"
+                    aria-label="Codolio profile"
+                    className="group w-9 h-9 bg-gradient-to-br from-[#fff4eb] to-[#fbe7d8] hover:from-orange-100 hover:to-orange-200 dark:from-gray-600 dark:to-gray-700 dark:hover:from-orange-900 dark:hover:to-orange-800 rounded-full transition-all duration-200 flex items-center justify-center shadow-sm ring-1 ring-orange-100/70 dark:ring-orange-800/40"
+                    whileHover={{ scale: 1.12 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <CodolioIcon className="w-5 h-5 drop-shadow-sm transition-transform duration-200 group-hover:scale-110" />
                   </motion.a>
                 )}
               </div>
